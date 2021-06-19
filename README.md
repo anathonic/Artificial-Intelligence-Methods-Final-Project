@@ -1,1 +1,1 @@
-# Artificial-Intelligence-methods---final-project
+# Artificial Intelligence methods-final-project
