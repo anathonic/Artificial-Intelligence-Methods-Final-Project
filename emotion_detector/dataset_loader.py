@@ -31,9 +31,9 @@ neutral = 0
 #zliczanie ilość plików z 'Training' Usage do pętli
 data = pd.read_csv('./fer2013/fer2013.csv')
 x = int(data['Usage'].value_counts()[0:1])
-mat = np.zeros((48,48),dtype=np.uint8)
-print("Saving images...")
+png = np.zeros((48,48),dtype=np.uint8)
 bytes = 48*48
+print("Saving images...")
 # czytanie pliku csv z datasetem
 for i in tqdm(range(len(data))):
     txt = data['pixels'][i]
@@ -43,9 +43,9 @@ for i in tqdm(range(len(data))):
     for j in range(bytes):
         xind = j // 48
         yind = j % 48
-        mat[xind][yind] = atoi(words[j])
+        png[xind][yind] = atoi(words[j])
 
-    img = Image.fromarray(mat)
+    img = Image.fromarray(png)
 
 # rozpakowywanie datasetu do podfolderów
     if i < x:
