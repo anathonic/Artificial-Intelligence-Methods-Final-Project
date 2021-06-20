@@ -27,13 +27,6 @@ happy = 0
 sad = 0
 surprised = 0
 neutral = 0
-angry_test = 0
-disgusted_test = 0
-fearful_test = 0
-happy_test = 0
-sad_test = 0
-surprised_test = 0
-neutral_test = 0
 
 #zliczanie ilość plików z 'Training' Usage do pętli
 data = pd.read_csv('./fer2013/fer2013.csv')
