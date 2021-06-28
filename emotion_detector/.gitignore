@@ -1,6 +1,5 @@
 data/
 fer2013/
 model.h5
-plot.png
 haarcascade_frontalface_default.xml
-
+__pycache__
