@@ -40,7 +40,8 @@ neutral_test = 0
 # załadowanie pliku csv, obliczenie Training
 data = pd.read_csv('./fer2013/fer2013.csv')
 #print(data['Usage'].value_counts())
-training_count = int(data['Usage'].value_counts()[0:1])
+train_count = int(data['Usage'].value_counts()[0:1])
+val_count = num_val = int(data['Usage'].value_counts()[1:2])+int(data['Usage'].value_counts()[2:3])
 png = np.zeros((48,48),dtype=np.uint8)
 bytes = 48*48
 print("Saving images...")
@@ -59,7 +60,7 @@ for i in tqdm(range(len(data))):
     img = Image.fromarray(png)
 
     # train - czyli wlatuje Training (28709)
-    if i < training_count:
+    if i < train_count:
         if data['emotion'][i] == 0:
             img.save('data/train/angry/im'+str(angry)+'.png')
             angry += 1
